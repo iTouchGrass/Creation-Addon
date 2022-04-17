@@ -1,0 +1,68 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:millstone"
+        },
+        "components": {
+            "minecraft:geometry": "geometry.millstone",
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 0,
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_absorption": 0,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "millstone",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "outside:millstone_interact"
+            },
+            "minecraft:rotation": [
+                0,
+                0,
+                0
+            ],
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    0.4,
+                    0.4
+                ],
+                "on_tick": {
+                    "event": "outside:loot",
+                    "target": "self"
+                }
+            }
+        },
+        "events": {
+            "outside:millstone_interact": {
+                "sequence": [{
+                        "condition": "query.get_equipped_item_name == 'andesite'",
+                        "run_command": {
+                            "command": [
+                                "setblock ~ ~ ~ outside:millstoneandestocobble"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'goggles'",
+                        "run_command": {
+                            "command": [
+                                "title @p actionbar 0 blocks left"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "outside:loot": {
+                "run_command": {
+                    "command": [
+                        "function millstone/millstone_1/automill_1_e"
+                    ]
+                }
+            }
+        }
+    }
+}

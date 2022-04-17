@@ -1,0 +1,15 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "outside:copper_sheet",
+					"weight": 100,
+					"count": 1
+				}
+			]
+		}
+	]
+}

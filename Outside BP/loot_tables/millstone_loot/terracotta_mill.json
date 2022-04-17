@@ -1,0 +1,15 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:red_sand",
+					"weight": 100,
+                    "count": 1
+				}
+			]
+		}
+	]
+}

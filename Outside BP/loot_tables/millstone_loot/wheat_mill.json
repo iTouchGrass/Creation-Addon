@@ -1,0 +1,30 @@
+{
+	"pools": [
+		{
+			"rolls": {
+                "min": 1,
+                "max": 3
+            },
+			"entries": [
+				{
+					"type": "item",
+					"name": "outside:wheat_flour",
+					"weight": 100,
+                    "count": 1
+				},
+				{
+					"type": "item",
+					"name": "outside:wheat_flour",
+					"weight": 25,
+					"count": 2
+				},
+                {
+                    "type": "item",
+                    "name": "minecraft:wheat_seeds",
+                    "weight": 25,
+                    "count": 1
+                }
+			]
+		}
+	]
+}

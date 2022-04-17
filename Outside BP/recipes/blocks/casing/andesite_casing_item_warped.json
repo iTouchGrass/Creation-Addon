@@ -1,0 +1,33 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "outside:andesite_casing_item_warped"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ppp",
+			"ala",
+			"ppp"
+		],
+		"key": {
+			"p": {
+				"item": "minecraft:warped_planks"
+			},
+			"a": {
+				"item": "outside:andesite_alloy"
+			},
+			"l": {
+				"item": "minecraft:warped_stem"
+			}
+		},
+		"result": [
+			{
+				"item": "outside:andesite_casing_item",
+				"count": 4
+			}
+		]
+	}
+}

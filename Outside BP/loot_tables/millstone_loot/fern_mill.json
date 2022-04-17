@@ -1,0 +1,24 @@
+{
+	"pools": [
+		{
+			"rolls": {
+                "min": 1,
+                "max": 2
+            },
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:green_dye",
+					"weight": 100,
+                    "count": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:wheat_seeds",
+					"weight": 10,
+					"count": 1
+				}
+			]
+		}
+	]
+}

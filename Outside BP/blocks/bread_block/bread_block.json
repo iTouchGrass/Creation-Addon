@@ -1,0 +1,410 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:block": {
+		"description": {
+			"identifier": "outside:bread_block",
+			"properties": {
+				"outside:bread_block_eat": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 0",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_full",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_full",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 1",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_1",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_1",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							12,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							12,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 2",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_2",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_2",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							10,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							10,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 3",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_3",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_3",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							8,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							8,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 4",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_4",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_4",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							6,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							6,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 5",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_5",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_5",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							4,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							4,
+							8,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('outside:bread_block_eat') == 6",
+				"components": {
+					"minecraft:geometry": "geometry.bread_block_6",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bread_block_6",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							2,
+							8,
+							14
+						]
+					},
+					"minecraft:entity_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							2,
+							8,
+							14
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:geometry": "geometry.bread_block_full",
+			"minecraft:destroy_time": 1,
+			"minecraft:explosion_resistance": 0,
+			"minecraft:block_light_emission": 0,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:on_interact": {
+				"event": "outside:bread_block_interact"
+			},
+			"minecraft:on_player_placing": {
+				"event": "outside:bread_block_place"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "bread_block_full",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					8,
+					14
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					8,
+					14
+				]
+			},
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"events": {
+			"outside:bread_block_place": {
+				"set_block_property": {
+					"outside:bread_block_eat": 0
+				}
+			},
+			"outside:bread_block_interact": {
+				"sequence": [
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 0",
+						"set_block_property": {
+							"outside:bread_block_eat": 1
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 1",
+						"set_block_property": {
+							"outside:bread_block_eat": 2
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 2",
+						"set_block_property": {
+							"outside:bread_block_eat": 3
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 3",
+						"set_block_property": {
+							"outside:bread_block_eat": 4
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 4",
+						"set_block_property": {
+							"outside:bread_block_eat": 5
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 5",
+						"set_block_property": {
+							"outside:bread_block_eat": 6
+						},
+						"run_command": {
+							"command": [
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					},
+					{
+						"condition": "query.block_property('outside:bread_block_eat') == 6",
+						"run_command": {
+							"command": [
+								"setblock ~ ~ ~ air",
+								"effect @p saturation 1 1",
+								"playsound random.burp @p"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

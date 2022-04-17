@@ -1,0 +1,43 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:depot_brass_sheet",
+            "properties": {
+                "outside:sheet": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "components": {
+            "tag:depot_brass_sheet": {},
+            "minecraft:geometry": "geometry.depot_brass_sheet",
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 6,
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_filter": 0,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "depot_brass_sheet",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            }
+        },
+        "events": {
+            "outside:item_variable": {
+                "sequence": [{
+                    "run_command": {
+                        "command": [
+                            "give @p outside:brass_sheet",
+                            "setblock ~~~ outside:depot"
+                        ]
+                    }
+                }]
+            }
+        }
+    }
+}

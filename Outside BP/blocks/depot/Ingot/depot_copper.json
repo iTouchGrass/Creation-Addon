@@ -1,0 +1,38 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:depot_copper"
+        },
+        "components": {
+            "tag:depot_copper": {},
+            "minecraft:geometry": "geometry.depot_copper_ingot",
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 6,
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_filter": 0,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "depot_copper_ingot",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            }
+        },
+        "events": {
+            "outside:item_variable": {
+                "sequence": [{
+                    "run_command": {
+                        "command": [
+                            "gamerule sendcommandfeedback false",
+                            "give @p minecraft:copper_ingot",
+                            "setblock ~~~ outside:depot"
+                        ]
+                    }
+                }]
+            }
+        }
+    }
+}

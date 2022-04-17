@@ -1,0 +1,33 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "outside:mechanical_drill_item"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" a ",
+			"aia",
+			" c "
+		],
+		"key": {
+			"a": {
+				"item": "outside:andesite_alloy"
+			},
+			"i": {
+				"item": "minecraft:iron_ingot"
+			},
+			"c": {
+				"item": "outside:andesite_casing_item"
+			}
+		},
+		"result": [
+			{
+				"item": "outside:mechanical_drill_item",
+				"count": 1
+			}
+		]
+	}
+}
