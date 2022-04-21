@@ -1,0 +1,172 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:water_wheel",
+            "properties": {
+                "outside:power": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "outside:rotate": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "water_wheel",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.water_wheel",
+            "minecraft:block_light_filter": 0,
+            "minecraft:block_light_emission": 0,
+            "minecraft:on_player_placing": {
+                "event": "rotate"
+            },
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    0.55,
+                    0.55
+                ],
+                "on_tick": {
+                    "event": "tik"
+                }
+            },
+            "minecraft:destroy_time": 2.0,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#717171"
+        },
+        "events": {
+            "rotate": {
+                "set_block_property": {
+                    "outside:rotate": "math.floor(query.block_face/2)"
+                }
+            },
+            "tik": {
+                "sequence": [{
+                        "condition": "!q.block_neighbor_has_any_tag(0,1,0,'air')",
+                        "set_block_property": {
+                            "outside:power": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,1,0,'water')",
+                        "set_block_property": {
+                            "outside:power": 2
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,1,0,'water') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:power": 3
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,1,0,'water') && query.block_property('outside:power') == 3",
+                        "set_block_property": {
+                            "outside:power": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "permutations": [{
+                "condition": "query.block_property('outside:power') == 1",
+                "components": {
+                    "tag:waterwheel": {},
+                    "minecraft:geometry": "geometry.water_wheel"
+                }
+            },
+            {
+                "condition": "query.block_property('outside:power') == 2",
+                "components": {
+                    "tag:waterwheel_powered_35": {},
+                    "minecraft:geometry": "geometry.water_wheel_35"
+                }
+            },
+            {
+                "condition": "query.block_property('outside:power') == 3",
+                "components": {
+                    "tag:waterwheel_powered_60": {},
+                    "minecraft:geometry": "geometry.water_wheel_60"
+                }
+            },
+            {
+                "condition": "query.block_property('outside:power') == 4",
+                "components": {
+                    "tag:waterwheel_powered_90": {},
+                    "minecraft:geometry": "geometry.water_wheel"
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 0",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 1",
+                "components": {
+                    "minecraft:rotation": [
+                        90,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 2",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0,
+                        90
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 3",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        90,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 4",
+                "components": {
+                    "minecraft:rotation": [
+                        0, -90,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 5",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0, -90
+                    ]
+                }
+            }
+        ]
+    }
+}

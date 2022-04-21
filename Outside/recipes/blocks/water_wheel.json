@@ -1,0 +1,28 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "outside:water_wheel"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "www",
+            "waw",
+            "www"
+        ],
+        "key": {
+            "w": {
+                "item": "wooden_slab"
+            },
+            "a": {
+                "item": "outside:shaft"
+            }
+        },
+        "result": [{
+            "item": "outside:water_wheel",
+            "count": 1
+        }]
+    }
+}

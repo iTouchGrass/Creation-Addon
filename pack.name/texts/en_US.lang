@@ -1,0 +1,4 @@
+tile.outside:depot.name=Depot
+tile.outside:mechanical_press.name=Mechanical Press
+tile.outside:shaft.name=Shaft
+tile.outside:water_wheel.name=Water Wheel

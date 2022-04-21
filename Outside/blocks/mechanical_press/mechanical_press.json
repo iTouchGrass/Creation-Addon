@@ -1,0 +1,194 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:mechanical_press",
+            "properties": {
+                "outside:press": [
+                    1,
+                    2
+                ],
+                "outside:power": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "mechanical_press",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.mechanical_press",
+            "minecraft:block_light_filter": 0,
+            "minecraft:block_light_emission": 0,
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    0.75,
+                    0.75
+                ],
+                "on_tick": {
+                    "event": "tik"
+                }
+            },
+            "minecraft:destroy_time": 2.0,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#717171"
+        },
+        "events": {
+            "tik": {
+                "sequence": [{
+                        "condition": "!q.block_neighbor_has_any_tag(0,0,1,'shaft') ",
+                        "set_block_property": {
+                            "outside:power": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,0,1,'shaft_powered_35') ",
+                        "set_block_property": {
+                            "outside:power": 2
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,0,1,'shaft_powered_60') ",
+                        "set_block_property": {
+                            "outside:power": 2
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,0,1,'air') ",
+                        "set_block_property": {
+                            "outside:power": 1
+                        }
+                    },
+                    {
+                        "condition": "!q.block_neighbor_has_any_tag(0,-2,0,'depot_brass') ",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_brass') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_brass_sheet",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_iron')",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_iron') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_iron_sheet",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_gold')",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_gold') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_gold_sheet",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_copper')",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_copper') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_copper_sheet",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_dirt')",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_dirt') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_dirt_path",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_podzol')",
+                        "set_block_property": {
+                            "outside:press": 1
+                        }
+                    },
+                    {
+                        "condition": "q.block_neighbor_has_any_tag(0,-2,0,'depot_podzol') && query.block_property('outside:power') == 2",
+                        "set_block_property": {
+                            "outside:press": 2
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~-2~ outside:depot_dirt_path",
+                                "setblock ~~~ outside:mechanical_press"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "permutations": [{
+            "condition": "query.block_property('outside:press') == 1",
+            "components": {
+                "tag:mechanical_press": {},
+                "minecraft:geometry": "geometry.mechanical_press"
+            }
+        },
+        {
+            "condition": "query.block_property('outside:press') == 2",
+            "components": {
+                "tag:mechanical_press_4": {},
+                "minecraft:geometry": "geometry.mechanical_press_4"
+            }
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:belt_start",
+            "properties": {
+                "outside:rotate": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "belt_start",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.belt_start",
+            "minecraft:block_light_filter": 0,
+            "minecraft:block_light_emission": 0,
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            },
+            "minecraft:destroy_time": 2.0,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#717171",
+            "minecraft:on_player_destroyed": {
+                "event": "destroy"
+            },
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    0.75,
+                    0.75
+                ],
+                "on_tick": {
+                    "event": "tick"
+                }
+            }
+        },
+        "events": {
+            "rotate": {
+                "set_block_property": {
+                    "outside:rotate": "math.floor(query.block_face/2)"
+                }
+            },
+            "outside:item_variable": {
+                "sequence": [{
+                    "condition": "query.get_equipped_item_name == 'iron_ingot'",
+                    "decrement_stack": {
+                        "ignore_game_mode": true
+                    },
+                    "run_command": {
+                        "command": [
+                            "setblock ~~~ outside:belt_start_iron"
+                        ]
+                    }
+                }]
+            },
+            "destroy": {
+                "sequence": [{
+                    "run_command": {
+                        "command": [
+                            "setblock ~~~ outside:shaft",
+                            "setblock ~-1~~ air",
+                            "setblock ~-2~~ air",
+                            "setblock ~-3~~ air",
+                            "setblock ~-4~~ air",
+                            "setblock ~-5~~ outside:shaft"
+                        ]
+                    }
+                }]
+            }
+        },
+        "permutations": [{
+                "condition": "query.block_property('outside:rotate') == 0",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 1",
+                "components": {
+                    "minecraft:rotation": [
+                        90,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 2",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0,
+                        90
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 3",
+                "components": {
+                    "minecraft:rotation": [-90,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('outside:rotate') == 4",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0, -90
+                    ]
+                }
+            }
+        ]
+    }
+}

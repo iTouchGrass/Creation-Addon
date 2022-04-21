@@ -1,0 +1,44 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:depot_dirt",
+            "properties": {
+                "outside:sheet": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "components": {
+            "tag:depot_dirt": {},
+            "minecraft:geometry": "geometry.depot_dirt_block",
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 6,
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_filter": 0,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "depot_dirt_block",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            }
+        },
+        "events": {
+            "outside:item_variable": {
+                "sequence": [{
+                    "run_command": {
+                        "command": [
+                            "gamerule sendcommandfeedback false",
+                            "give @p dirt",
+                            "setblock ~~~ outside:depot"
+                        ]
+                    }
+                }]
+            }
+        }
+    }
+}

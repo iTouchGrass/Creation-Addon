@@ -1,0 +1,106 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:depot"
+        },
+        "components": {
+            "minecraft:geometry": "geometry.depot",
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 6,
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_filter": 0,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "depot_e",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            }
+        },
+        "events": {
+            "outside:item_variable": {
+                "sequence": [{
+                        "condition": "query.get_equipped_item_name == 'brass_ingot'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_brass"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'mechanical_press'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~2~ outside:mechanical_press"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'iron_ingot'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_iron"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'gold_ingot'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_gold"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'copper_ingot'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_copper"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'dirt'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_dirt"
+                            ]
+                        }
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name == 'podzol'",
+                        "decrement_stack": {
+                            "ignore_game_mode": true
+                        },
+                        "run_command": {
+                            "command": [
+                                "setblock ~~~ outside:depot_podzol"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:geometry": [{
+        "description": {
+            "identifier": "geometry.depot_dirt_podzol",
+            "texture_width": 64,
+            "texture_height": 64,
+            "visible_bounds_width": 2,
+            "visible_bounds_height": 2.5,
+            "visible_bounds_offset": [0, 0.75, 0]
+        },
+        "bones": [{
+                "name": "bone2",
+                "pivot": [8, 0, -8],
+                "cubes": [{
+                        "origin": [-8, 0, -8],
+                        "size": [16, 11, 16],
+                        "uv": {
+                            "north": { "uv": [16, 28], "uv_size": [16, 11] },
+                            "east": { "uv": [30, 0], "uv_size": [16, 11] },
+                            "south": { "uv": [30, 11], "uv_size": [16, 11] },
+                            "west": { "uv": [0, 32], "uv_size": [16, 11] },
+                            "up": { "uv": [0, 0], "uv_size": [16, 16] },
+                            "down": { "uv": [0, 32], "uv_size": [16, -16] }
+                        }
+                    },
+                    {
+                        "origin": [-7, 11, -7],
+                        "size": [14, 2, 14],
+                        "uv": {
+                            "north": { "uv": [30, 22], "uv_size": [14, 2] },
+                            "east": { "uv": [30, 24], "uv_size": [14, 2] },
+                            "south": { "uv": [30, 26], "uv_size": [14, 2] },
+                            "west": { "uv": [32, 28], "uv_size": [14, 2] },
+                            "up": { "uv": [16, 0], "uv_size": [14, 14] },
+                            "down": { "uv": [16, 28], "uv_size": [14, -14] }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "bone",
+                "pivot": [0, 0, 0],
+                "cubes": [{
+                    "origin": [-2, 13, -2],
+                    "size": [4, 4, 4],
+                    "pivot": [0, 15, 0],
+                    "rotation": [0, -22.5, 0],
+                    "uv": {
+                        "north": { "uv": [32, 30], "uv_size": [4, 4] },
+                        "east": { "uv": [32, 34], "uv_size": [4, 4] },
+                        "south": { "uv": [36, 30], "uv_size": [4, 4] },
+                        "west": { "uv": [36, 34], "uv_size": [4, 4] },
+                        "up": { "uv": [32, 38], "uv_size": [4, 4] },
+                        "down": { "uv": [36, 42], "uv_size": [4, -4] }
+                    }
+                }]
+            }
+        ]
+    }]
+}

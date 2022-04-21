@@ -1,0 +1,36 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:belt_end"
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "belt_start",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.belt_end",
+            "minecraft:block_light_filter": 0,
+            "minecraft:block_light_emission": 0,
+            "minecraft:on_interact": {
+                "event": "outside:item_variable"
+            },
+            "minecraft:destroy_time": 2.0,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#717171",
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    0.75,
+                    0.75
+                ],
+                "on_tick": {
+                    "event": "tick"
+                }
+            }
+        },
+        "events": {}
+    }
+}

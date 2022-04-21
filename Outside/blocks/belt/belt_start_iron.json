@@ -1,0 +1,151 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "outside:belt_start_iron",
+            "properties": {
+                "outside:power": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "components": {
+                "minecraft:material_instances": {
+                    "*": {
+                        "texture": "belt_iron_ingot",
+                        "render_method": "alpha_test"
+                    }
+                },
+                "minecraft:geometry": "geometry.belt_start_iron",
+                "minecraft:block_light_filter": 0,
+                "minecraft:block_light_emission": 0,
+                "minecraft:on_player_placing": {
+                    "event": "rotate"
+                },
+                "minecraft:ticking": {
+                    "looping": true,
+                    "range": [
+                        0.55,
+                        0.55
+                    ],
+                    "on_tick": {
+                        "event": "tik"
+                    }
+                },
+                "minecraft:destroy_time": 2.0,
+                "minecraft:friction": 0.6,
+                "minecraft:map_color": "#717171"
+            },
+            "events": {
+                "tik": {
+                    "sequence": [{
+                            "condition": "!q.block_neighbor_has_any_tag(0,1,0,'air')",
+                            "set_block_property": {
+                                "outside:power": 1
+                            }
+                        },
+                        {
+                            "condition": "q.block_neighbor_has_any_tag(0,0,1,'shaft_powered_35')",
+                            "set_block_property": {
+                                "outside:power": 2
+                            }
+                        },
+                        {
+                            "condition": "q.block_neighbor_has_any_tag(0,0,1,'shaft_powered_60') && query.block_property('outside:power') == 2",
+                            "set_block_property": {
+                                "outside:power": 3
+                            }
+                        },
+                        {
+                            "condition": "q.block_neighbor_has_any_tag(0,0,1,'shaft_powered_90') && query.block_property('outside:power') == 3",
+                            "set_block_property": {
+                                "outside:power": 1
+                            }
+                        }
+                    ]
+                }
+            },
+            "permutations": [{
+                    "condition": "query.block_property('outside:power') == 1",
+                    "components": {
+                        "tag:belt_35_iron_ingot": {},
+                        "minecraft:geometry": "geometry.belt_start_iron"
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:power') == 2",
+                    "components": {
+                        "tag:belt_60_iron_ingot": {},
+                        "minecraft:geometry": "geometry.belt_start_iron_2"
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:power') == 3",
+                    "components": {
+                        "tag:waterwheel_powered_60": {},
+                        "minecraft:geometry": "geometry.belt_iron_ingot_3"
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 0",
+                    "components": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 1",
+                    "components": {
+                        "minecraft:rotation": [
+                            90,
+                            0,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 2",
+                    "components": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            90
+                        ]
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 3",
+                    "components": {
+                        "minecraft:rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 4",
+                    "components": {
+                        "minecraft:rotation": [
+                            0, -90,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "condition": "query.block_property('outside:rotate') == 5",
+                    "components": {
+                        "minecraft:rotation": [
+                            0,
+                            0, -90
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
