@@ -9,7 +9,7 @@
   <h2 align="center">GoldenPixel Information  <br>
   	<a href="https://www.patreon.com/PixelSideInc "><img src="https://img.shields.io/badge/Supporters-0-ff5733" alt="Patreon"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/create/files"><img src="https://img.shields.io/badge/Available%20for-MCBE%201.16%20to%201.18-c70039" alt="Supported Versions"></a>
-	<a href="https://discord.gg/UGRRXxU5E7"><img src="https://img.shields.io/discord/962876939813679104?color=blue&style=for-the-badgecolor=5865f2&label=Feedback%20%26%20Help&style=flat" alt="Discord"></a>
+	<a href="https://discord.gg/UGRRXxU5E7"><img src="https://img.shields.io/discord/966728894772305941?color=Blue&label=Feedback%20and%20Help&style=for-the-badge" alt="Discord"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/create"><img src="http://cf.way2muchnoise.eu/328085.svg" alt="CF"></a><br><br>
 </h1>
 
@@ -21,7 +21,7 @@ Check out the wiki and in-game Tool-tips for further info on how to use these fe
 
 [<img src="https://i.imgur.com/0lLX9Oy.jpg" width="200">](https://github.com/Creators-of-Create/Create/issues "Report Issues")
 [<img src="https://i.imgur.com/bjEZraY.jpg" width="200">](https://www.youtube.com/channel/UCrKV2QTuyGcv4E3eSJpBiYA/playlists "Watch Videos")
-[<img src="https://i.imgur.com/aWrjfKJ.jpg" width="200">](https://discord.gg/yw3vB5SAfQ "Feedback & Help")
+[<img src="https://i.imgur.com/aWrjfKJ.jpg" width="200">](https://discord.gg/UGRRXxU5E7 "Feedback & Help")
 [<img src="https://i.imgur.com/xj8o2xC.jpg" width="200">](https://www.patreon.com/PixelSideInc "Support Us")
 
 <hr>
