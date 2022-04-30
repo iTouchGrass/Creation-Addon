@@ -1,12 +1,12 @@
 
 <p align="center"><img src="https://i.imgur.com/SXaePW6.png" alt="Logo" width="200"></p>
-<h1 align="center">Outside Addon (Create Mod Port)  <br>
+<h1 align="center">Creation Addon (Create Mod Port)  <br>
 	<a href="https://www.patreon.com/simibubi"><img src="https://img.shields.io/badge/Supporters-80-ff5733" alt="Patreon"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/create/files"><img src="https://img.shields.io/badge/Available%20for-MC%201.14%20to%201.18-c70039" alt="Supported Versions"></a>
 	<a href="https://github.com/Creators-of-Create/Create/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Creators-of-Create/Create?style=flat&color=900c3f" alt="License"></a>
 	<a href="https://discord.gg/hmaD7Se"><img src="https://img.shields.io/discord/620934202875183104?color=5865f2&label=Feedback%20%26%20Help&style=flat" alt="Discord"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/create"><img src="http://cf.way2muchnoise.eu/328085.svg" alt="CF"></a><br><br>
-  <h2 align="center">GoldenPixel Information  <br>
+  <h2 align="center">GrandFlux Information  <br>
   	<a href="https://https://www.patreon.com/GoldenPixelInc"><img src="https://img.shields.io/badge/Supporters-0-ff5733" alt="Patreon"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/create/files"><img src="https://img.shields.io/badge/Available%20for-MCBE%201.16%20to%201.18-c70039" alt="Supported Versions"></a>
 	<a href="https://discord.gg/UGRRXxU5E7"><img src="https://img.shields.io/discord/966728894772305941?color=Blue&label=Feedback%20and%20Help&style=for-the-badge" alt="Discord"></a>
